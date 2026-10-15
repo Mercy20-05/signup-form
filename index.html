@@ -1,0 +1,89 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Signup Form with Validation</title>
+  <link rel="stylesheet" href="style.css" />
+</head>
+<body>
+  <div class="signup-container">
+    <div class="form-header">
+      <h2>Create an Account</h2>
+      <p>Sign up to get started with your account</p>
+    </div>
+
+    <form id="signupForm" novalidate>
+      <!-- Name Field -->
+      <div class="form-group" id="nameGroup">
+        <label for="fullName">Full Name</label>
+        <div class="input-wrapper">
+          <input 
+            type="text" 
+            id="fullName" 
+            name="fullName" 
+            placeholder="e.g. John Doe"
+            autocomplete="name"
+          />
+          <span class="status-icon" aria-hidden="true"></span>
+        </div>
+        <small class="error-msg" id="nameError"></small>
+      </div>
+
+      <!-- Email Field -->
+      <div class="form-group" id="emailGroup">
+        <label for="email">Email Address</label>
+        <div class="input-wrapper">
+          <input 
+            type="email" 
+            id="email" 
+            name="email" 
+            placeholder="e.g. john@example.com"
+            autocomplete="email"
+          />
+          <span class="status-icon" aria-hidden="true"></span>
+        </div>
+        <small class="error-msg" id="emailError"></small>
+      </div>
+
+      <!-- Password Field -->
+      <div class="form-group" id="passwordGroup">
+        <label for="password">Password</label>
+        <div class="input-wrapper">
+          <input 
+            type="password" 
+            id="password" 
+            name="password" 
+            placeholder="Create a strong password"
+            autocomplete="new-password"
+          />
+          <button type="button" id="togglePasswordBtn" class="toggle-password" aria-label="Toggle password visibility">
+            👁️
+          </button>
+        </div>
+        
+        <!-- Password Strength Indicator -->
+        <div class="strength-meter-container" id="strengthMeter">
+          <div class="strength-bars">
+            <span class="bar"></span>
+            <span class="bar"></span>
+            <span class="bar"></span>
+            <span class="bar"></span>
+          </div>
+          <span class="strength-text" id="strengthText">Password Strength</span>
+        </div>
+        <small class="error-msg" id="passwordError"></small>
+      </div>
+
+      <!-- Submit Button -->
+      <button type="submit" id="submitBtn" class="btn-submit">Sign Up</button>
+    </form>
+
+    <div id="successMessage" class="success-banner" style="display: none;">
+      🎉 Account created successfully!
+    </div>
+  </div>
+
+  <script src="script.js"></script>
+</body>
+</html>
